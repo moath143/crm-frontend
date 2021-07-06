@@ -1,0 +1,10 @@
+.add-new-ticket{
+    background-color: #fff;
+    box-shadow: 0 0 15px -5px black;
+    padding: 40px;
+    border-radius: 4px;
+}
+
+form textarea{
+    resize: none;
+}

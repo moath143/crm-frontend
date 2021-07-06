@@ -22,3 +22,9 @@ footer {
   color: #fff;
   padding: 1rem;
 }
+
+.breadcrumb-item a {
+  text-decoration: none;
+  color: #0dcaf0;
+  font-weight: 500;
+}
