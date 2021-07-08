@@ -40,7 +40,7 @@ function LoginForm({ handleOnChange, handleOnSubmit, formLoadSwitcher, email, pa
       </Row>
       <Row>
         <Col>
-          <a href="#" onClick={ () => formLoadSwitcher('reset')}>
+          <a href="/" onClick={ () => formLoadSwitcher('reset')}>
             Forget Password??
           </a>
         </Col>
