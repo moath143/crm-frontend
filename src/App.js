@@ -1,21 +1,35 @@
 import "./App.css";
 import DefaultLayout from "./layout/DefaultLayout";
-// import Entry from "./page/entry/Entry.page";
-// import Dashboard from "./page/dashboard/Dashboard.page";
+import Entry from "./page/entry/Entry.page";
+import Dashboard from "./page/dashboard/Dashboard.page";
 import Addticket from "./page/new-ticket/Addticket.page";
 import TicketList from "./page/ticket-list/TicketList.page";
 import Ticket from "./page/ticket/Ticket.page";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Privateroute from "./components/private-route/Privateroute.comp";
 
 function App() {
   return (
     <div className="App">
-      {/* <Entry /> */}
-      <DefaultLayout>
-        {/* <Dashboard /> */}
-        {/* <Addticket /> */}
-        {/* <TicketList /> */}
-        <Ticket />
-      </DefaultLayout>
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            <Entry />
+          </Route>
+            <Privateroute path="/dashboard" exact>
+              <Dashboard />
+            </Privateroute>
+            <Privateroute path="/add-ticket" exact>
+              <Addticket />
+            </Privateroute>
+            <Privateroute path="/tickets" exact>
+              <TicketList />
+            </Privateroute>
+            <Privateroute path="/ticket/:tId" exact>
+              <Ticket />
+            </Privateroute>
+        </Switch>
+      </Router>
     </div>
   );
 }

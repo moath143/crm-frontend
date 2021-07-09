@@ -1,6 +1,9 @@
 import React from "react";
 import { Table } from "react-bootstrap";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
+
+import { Link } from "react-router-dom";
+
 function TicketTable({ tickets }) {
   return (
     <Table striped bordered hover className="text-center table-dark">
@@ -13,17 +16,20 @@ function TicketTable({ tickets }) {
         </tr>
       </thead>
       <tbody>
-        
         {tickets.length ? (
-                  tickets.map((row, index) => {
-                      return (
-                        <tr key={index}>
-                          <td>{row.id}</td>
-                          <td>{row.subject}</td>
-                          <td> {row.status} </td>
-                          <td> {row.addedAt} </td>
-                        </tr>
-                      );
+          tickets.map((row, index) => {
+            return (
+              <tr key={index}>
+                <td>{row.id}</td>
+                <td>
+                  <Link to={`/ticket/${row.id}`}>
+                    {row.subject}
+                  </Link>
+                </td>
+                <td> {row.status} </td>
+                <td> {row.addedAt} </td>
+              </tr>
+            );
           })
         ) : (
           <tr>
@@ -40,5 +46,5 @@ function TicketTable({ tickets }) {
 export default TicketTable;
 
 TicketTable.propTypes = {
-  tickets: PropTypes.array.isRequired
+  tickets: PropTypes.array.isRequired,
 };

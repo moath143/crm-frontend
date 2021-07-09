@@ -28,3 +28,13 @@ footer {
   color: #0dcaf0;
   font-weight: 500;
 }
+
+tbody a{
+  color: #fff;
+  text-decoration: none;
+  transition: .2s;
+}
+
+tbody a:hover{
+  color: #0B5ED7;
+}

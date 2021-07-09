@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function ResetPassword({
   handleOnChange,
@@ -36,9 +37,9 @@ function ResetPassword({
       </Row>
       <Row>
         <Col>
-          <a href="#" onClick={() => formLoadSwitcher("login")}>
+          <Link to="/" onClick={() => formLoadSwitcher("login")}>
             Login Now
-          </a>
+          </Link>
         </Col>
       </Row>
     </Container>

@@ -1,8 +1,15 @@
 import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-function LoginForm({ handleOnChange, handleOnSubmit, formLoadSwitcher, email, password }) {
+function LoginForm({
+  handleOnChange,
+  handleOnSubmit,
+  formLoadSwitcher,
+  email,
+  password,
+}) {
   return (
     <Container>
       <Row>
@@ -40,9 +47,9 @@ function LoginForm({ handleOnChange, handleOnSubmit, formLoadSwitcher, email, pa
       </Row>
       <Row>
         <Col>
-          <a href="/" onClick={ () => formLoadSwitcher('reset')}>
+          <Link to="/" onClick={() => formLoadSwitcher("reset")}>
             Forget Password??
-          </a>
+          </Link>
         </Col>
       </Row>
     </Container>
